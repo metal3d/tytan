@@ -9,7 +9,7 @@ TyTan.spec:
 .PHONY: dist
 dist: build
 	cp tytan-ui.glade dist/
-	cp activate install.sh uninstall.sh dist/
+	cp activate install.sh uninstall.sh tytan.desktop dist/
 	cp -r dist tytan-$(VERSION)
 	tar cfz tytan-$(VERSION).tgz tytan-$(VERSION)
 	rm -rf tytan-$(VERSION)
