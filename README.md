@@ -9,38 +9,29 @@ TyTan is a simple Python 3 application that will:
 
 The main goal is to allow user to launch one application that will launch the service, and open the view, avoiding the usage of a browser.
 
-## Requirements
-
-You need to install:
-
-- Python3
-- Conda (package or MiniConda)
-- webkit2gtk3
-
-Actually, you need to have python Gtk, WebKit2 and Glib that came with `python gi` module. To check if it's ok:
-```
-$ python3
->>> import gi
->>> from gi.repository import Gtk, WebKit2, GLib
-__main__:1: PyGIWarning: Gtk was imported without specifying a version first. Use gi.require_version('Gtk', '3.0') before import to ensure that the right version gets loaded.
-__main__:1: PyGIWarning: WebKit2 was imported without specifying a version first. Use gi.require_version('WebKit2', '4.0') before import to ensure that the right version gets loaded.
->>> 
-Press CTRL+D to quit
-```
-
-**You can ignore PyGIWarning. The most important is to not have any `ImportError`**.
-
 
 ## Installation
 
-TODO: make a real application setup
+First, please, install Conda via package or using MiniConda.
 
-At this time:
+Then:
 
-- download the release or git clone the repository
-- make a symlink from "TyTan" to `~/.local/bin/TyTan` or `/usr/local/bin/TyTan`:
+- Download latest releas from https://github.com/metal3d/tytan/releases.
+- Unpack the tarball and launch installation with `sudo`:
+
 ```
-ln -s path/to/TyTan ~/.local/bin/TyTan
+version='0.0.1'
+tar zxf tytan-${version}.tgz
+cd titan-${version}
+sudo ./install.sh
 ```
 
-Put the `tytan.desktop` file in `~/.local/share/applications/`
+You can uninstall with `sudo ./uninstall.sh`
+
+The installation create a desktop icon and put binary in `/usr/local/bin`.
+
+The binary is named "TyTan".
+
+## Conda on Fedora
+
+Conda on fedora needs "activate" script to make `nb_conda_kernels` to work properly. That's why the current installation script is putting it on `/usr/bin/activate`. If you're using Anaconda or Miniconda, you probably dont need that activation script. The install script detects if the file exists and do not overwrite it.
