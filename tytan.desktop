@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=TyTan
+Comment=Jupyter as a desktop application
+Exec="/usr/local/bin/TyTan"
+Terminal=false
+Type=Application
+Icon=applications-development
+StartupWMClass=tytan
+StartupNotify=true
+Categories=Science;
+TryExec=/usr/local/bin/TyTan

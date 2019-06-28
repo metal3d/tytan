@@ -1,0 +1,9 @@
+#!/bin/env python3
+import ui
+import os
+
+# use HOME as startup directory
+os.chdir(os.environ.get('HOME'))
+
+# Startup TyTan
+ui.App().start()

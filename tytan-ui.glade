@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.22.1 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <requires lib="webkit2gtk" version="2.12"/>
+  <object class="GtkTextBuffer" id="conda-out"/>
+  <object class="GtkImage" id="image1">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="tooltip_text" translatable="yes">Installed, press to open TyTan</property>
+    <property name="stock">gtk-ok</property>
+  </object>
+  <object class="GtkDialog" id="conda-install-dialog">
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">Conda JupyterLab installer</property>
+    <property name="modal">True</property>
+    <property name="default_width">800</property>
+    <property name="default_height">600</property>
+    <property name="icon_name">view-refresh</property>
+    <property name="type_hint">dialog</property>
+    <child>
+      <placeholder/>
+    </child>
+    <child internal-child="vbox">
+      <object class="GtkBox">
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox">
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton" id="install-done-button">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">image1</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+                <property name="non_homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="loading">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Installing...</property>
+                <property name="stock">gtk-refresh</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Installing conda environment
+Please wait... 
+&lt;span foreground="red"&gt;
+&lt;b&gt;it could take several minutes ! Be Patient !&lt;/b&gt;
+&lt;/span&gt;</property>
+            <property name="use_markup">True</property>
+            <property name="justify">center</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkTextView" id="conda-install-box">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="editable">False</property>
+                <property name="cursor_visible">False</property>
+                <property name="buffer">conda-out</property>
+                <property name="monospace">True</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkImage" id="image2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-close</property>
+  </object>
+  <object class="GtkDialog" id="conda-not-found-dialog">
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">Conda not found</property>
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
+    <property name="default_width">700</property>
+    <property name="default_height">400</property>
+    <property name="type_hint">dialog</property>
+    <child>
+      <placeholder/>
+    </child>
+    <child internal-child="vbox">
+      <object class="GtkBox">
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox">
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton" id="error-close-button">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">image2</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">&lt;b&gt;You must install Conda&lt;/b&gt;
+
+Before to be ready to work with TyTan, please install conda.
+
+You can use package manager (e.g. Fedora has a "conda" package) - or use Miniconda from:
+ &lt;a href="https://docs.conda.io/en/latest/miniconda.html"&gt;https://docs.conda.io/en/latest/miniconda.html&lt;/a&gt;
+
+After having installed Conda, you will be able to install TyTan.</property>
+            <property name="use_markup">True</property>
+            <property name="wrap">True</property>
+            <property name="selectable">True</property>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="WebKitSettings" id="webview-settings">
+    <property name="default_charset">utf-8</property>
+    <property name="enable_webaudio">True</property>
+    <property name="enable_webgl">True</property>
+    <property name="javascript_can_access_clipboard">True</property>
+    <property name="user_agent">Mozilla/5.0 (X11; Fedora; Linux x86_64) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.0 Safari/605.1.15</property>
+    <property name="enable_accelerated_2d_canvas">True</property>
+    <property name="enable_media_stream">True</property>
+    <property name="enable_media_capabilities">True</property>
+    <property name="allow_universal_access_from_file_urls">True</property>
+  </object>
+  <object class="GtkApplicationWindow" id="main-window">
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">TyTan - JupyterLab Desktop</property>
+    <property name="default_width">1024</property>
+    <property name="default_height">768</property>
+    <property name="icon_name">applications-development</property>
+    <child>
+      <placeholder/>
+    </child>
+    <child>
+      <object class="WebKitWebView" id="jupyter-view">
+        <property name="name">jupyter-view</property>
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="settings">webview-settings</property>
+        <child>
+          <placeholder/>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
